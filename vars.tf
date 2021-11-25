@@ -5,35 +5,35 @@ variable "company_name" {
 
 variable "AWS_REGION" {
   type    = string
-  default = "us-east-1"
+  default = "us-east-2"
 
 }
 
 variable "source_bucket" {
   type    = string
-  default = "andy-mediaconvert2"
+  default = "andy-mediaconvert"
 
 }
 
 variable "destination_bucket" {
   type    = string
-  default = "andy-mediaconvert-dest2"
+  default = "andy-mediaconvert-dest"
 
 }
 
 variable "MediaConvert_Default_Role_Name" {
   type    = string
-  default = "MediaConvert_Default_Role2"
+  default = "MediaConvert_Default_Role"
 }
 
 variable "VOD_Lambda_Role_Name" {
   type    = string
-  default = "VODLambdaRole2"
+  default = "VODLambdaRole"
 }
 
 variable "VOD_Lambda_Function_Name" {
   type    = string
-  default = "VODLambdaConvert2"
+  default = "VODLambdaConvert"
 }
 
 ## AWS Credential and Account Information

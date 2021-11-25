@@ -1,6 +1,6 @@
 resource "aws_lambda_function" "VOD_Lambda_Convert_Lambda" {
   filename      = "lambda.zip"
-  function_name = "VODLambdaConvert2"
+  function_name = var.VOD_Lambda_Function_Name
   role          = aws_iam_role.VODLambdaRole.arn
   handler       = "convert.handler"
 
@@ -13,12 +13,12 @@ resource "aws_lambda_function" "VOD_Lambda_Convert_Lambda" {
 
   environment {
     variables = {
-        DestinationBucket = var.destination_bucket
-        MediaConvertRole = aws_iam_role.MediaConvert_Default_Role.arn
-        Application = "VOD"
+      DestinationBucket = aws_s3_bucket.destination_media_convert.id
+      MediaConvertRole  = aws_iam_role.MediaConvert_Default_Role.arn
+      Application       = "VOD"
     }
   }
-  
+
   timeout = 120
 }
 

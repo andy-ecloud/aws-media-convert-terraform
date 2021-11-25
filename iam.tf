@@ -27,7 +27,8 @@ resource "aws_iam_role" "MediaConvert_Default_Role" {
             "s3:List*"
           ],
           "Resource" : [
-            "arn:aws:s3:::${var.source_bucket}/*"
+            "${aws_s3_bucket.source_media_convert.arn}",
+            "${aws_s3_bucket.source_media_convert.arn}/*"
           ]
         },
         {
@@ -36,7 +37,8 @@ resource "aws_iam_role" "MediaConvert_Default_Role" {
             "s3:Put*"
           ],
           "Resource" : [
-            "arn:aws:s3:::${var.destination_bucket}/*"
+            "${aws_s3_bucket.destination_media_convert.arn}",
+            "${aws_s3_bucket.destination_media_convert.arn}/*"
           ]
         }
       ]
