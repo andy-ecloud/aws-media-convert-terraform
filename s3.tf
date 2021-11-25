@@ -70,7 +70,7 @@ resource "aws_s3_bucket_notification" "source_media_convert_notification" {
     # filter_suffix       = ".log"
   }
 
-  depends_on = [aws_lambda_permission.allow_bucket]
+  # depends_on = [aws_lambda_permission.allow_bucket]
 }
 
 # resource "random_pet" "bucket" {
