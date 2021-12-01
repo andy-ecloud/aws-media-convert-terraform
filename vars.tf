@@ -26,6 +26,11 @@ variable "MediaConvert_Default_Role_Name" {
   default = "MediaConvert_Default_Role"
 }
 
+variable "MEDIACONVERT_TEMPLATE" {
+  type    = string
+  default = "andy-tem-hls"
+}
+
 variable "VOD_Lambda_Role_Name" {
   type    = string
   default = "VODLambdaRole"
